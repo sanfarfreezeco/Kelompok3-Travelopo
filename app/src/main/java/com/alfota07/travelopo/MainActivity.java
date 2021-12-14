@@ -59,7 +59,7 @@ public class MainActivity extends AppCompatActivity {
             String personId = acct.getId();
             Uri personPhoto = acct.getPhotoUrl();
 
-            nama.setText(personName);
+            nama.setText("Halo " + personName);
             email.setText(personEmail);
             id.setText(personId);
         }
