@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "799673215799",
+    "project_id": "api-login-with-g-1639471752142",
+    "storage_bucket": "api-login-with-g-1639471752142.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:799673215799:android:b931d2a575c7e8044508b2",
+        "android_client_info": {
+          "package_name": "com.alfota07.travelopo"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "799673215799-5ncvnruj0ge1e0j3vqj9gruqugm0pq20.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAD4Pu1jqyaj6DsoMWs9RCPt1gE6iwknG0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "799673215799-5ncvnruj0ge1e0j3vqj9gruqugm0pq20.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

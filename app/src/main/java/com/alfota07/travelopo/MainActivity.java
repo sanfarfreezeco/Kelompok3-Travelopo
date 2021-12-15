@@ -16,6 +16,8 @@ import com.google.android.gms.auth.api.signin.GoogleSignInClient;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -23,6 +25,8 @@ public class MainActivity extends AppCompatActivity {
     Button signout;
 
     GoogleSignInClient mGoogleSignInClient;
+
+    DatabaseReference akunGoogle;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -62,6 +66,12 @@ public class MainActivity extends AppCompatActivity {
             nama.setText("Halo " + personName);
             email.setText(personEmail);
             id.setText(personId);
+
+            akunGoogle = FirebaseDatabase.getInstance().getReference("akun");
+
+            akunGoogle.child(personId + "/Nama/").setValue(personName);
+            akunGoogle.child(personId + "/Email/").setValue(personEmail);
+            akunGoogle.child(personId + "/ID/").setValue(personId);
         }
     }
 
