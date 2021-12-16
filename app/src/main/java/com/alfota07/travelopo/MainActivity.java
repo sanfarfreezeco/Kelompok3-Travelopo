@@ -3,11 +3,11 @@ package com.alfota07.travelopo;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.net.Uri;
+import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
@@ -21,7 +21,6 @@ import com.google.firebase.database.FirebaseDatabase;
 
 public class MainActivity extends AppCompatActivity {
 
-    TextView nama, email, id;
     Button signout;
 
     GoogleSignInClient mGoogleSignInClient;
@@ -39,15 +38,12 @@ public class MainActivity extends AppCompatActivity {
 
         mGoogleSignInClient = GoogleSignIn.getClient(this, gso);
 
-        nama = findViewById(R.id.textViewNama);
-        email = findViewById(R.id.textViewEmail);
-        id = findViewById(R.id.textViewIDGoogle);
-        signout = findViewById(R.id.signout);
+        signout = findViewById(R.id.out);
         signout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 switch (view.getId()) {
-                    case R.id.signout:
+                    case R.id.out:
                         signOut();
                         break;
                 }
@@ -57,21 +53,12 @@ public class MainActivity extends AppCompatActivity {
         GoogleSignInAccount acct = GoogleSignIn.getLastSignedInAccount(this);
         if (acct != null) {
             String personName = acct.getDisplayName();
-            String personGivenName = acct.getGivenName();
-            String personFamilyName = acct.getFamilyName();
             String personEmail = acct.getEmail();
             String personId = acct.getId();
-            Uri personPhoto = acct.getPhotoUrl();
-
-            nama.setText("Halo " + personName);
-            email.setText(personEmail);
-            id.setText(personId);
 
             akunGoogle = FirebaseDatabase.getInstance().getReference("akun");
-
-            akunGoogle.child(personId + "/Nama/").setValue(personName);
-            akunGoogle.child(personId + "/Email/").setValue(personEmail);
-            akunGoogle.child(personId + "/ID/").setValue(personId);
+            Akun akun = new Akun(personId, personName, personEmail);
+            akunGoogle.child(personId).setValue(akun);
         }
     }
 
@@ -84,5 +71,22 @@ public class MainActivity extends AppCompatActivity {
                         finish();
                     }
                 });
+    }
+
+    public void profileMenu(View view) {
+        Intent intent = new Intent(this, ProfileActivity.class);
+        startActivity(intent);
+    }
+
+    public void historyMenu(View v) {
+        Toast.makeText(getApplicationContext(), "Mohon maaf, sistem sedang dalam pengembangan.", Toast.LENGTH_LONG).show();
+    }
+
+    public void bookKereta(View v) {
+        Toast.makeText(getApplicationContext(), "Mohon maaf, sistem sedang dalam pengembangan.", Toast.LENGTH_LONG).show();
+    }
+
+    public void bookHotel(View v) {
+        Toast.makeText(getApplicationContext(), "Mohon maaf, sistem sedang dalam pengembangan.", Toast.LENGTH_LONG).show();
     }
 }
