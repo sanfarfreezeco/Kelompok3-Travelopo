@@ -2,25 +2,19 @@ package com.alfota07.travelopo;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.net.Uri;
 import android.os.Bundle;
-import android.widget.Button;
 import android.widget.TextView;
 
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
 
 public class ProfileActivity extends AppCompatActivity {
 
-    TextView nama, email, id;
+    TextView nama, email;
 
     GoogleSignInClient mGoogleSignInClient;
-
-    DatabaseReference akunGoogle;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

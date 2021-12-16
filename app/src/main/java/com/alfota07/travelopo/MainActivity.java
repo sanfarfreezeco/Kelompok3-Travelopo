@@ -79,7 +79,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void historyMenu(View v) {
-        Toast.makeText(getApplicationContext(), "Mohon maaf, sistem sedang dalam pengembangan.", Toast.LENGTH_LONG).show();
+        Intent intent = new Intent(this, HistoryActivity.class);
+        startActivity(intent);
     }
 
     public void bookKereta(View v) {
