@@ -26,7 +26,7 @@ public class HistoryActivity extends AppCompatActivity {
     DatabaseReference akunGoogle;
 
     private ListView listViewHistory;
-    private List<Akun> listHistory;
+    private List<HistoryAkun> listHistory;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,13 +42,11 @@ public class HistoryActivity extends AppCompatActivity {
 
         mGoogleSignInClient = GoogleSignIn.getClient(this, gso);
 
-        akunGoogle = FirebaseDatabase.getInstance().getReference("akun");
-
         GoogleSignInAccount acct = GoogleSignIn.getLastSignedInAccount(this);
         if (acct != null) {
-            String personName = acct.getDisplayName();
-            String personEmail = acct.getEmail();
             String personId = acct.getId();
+
+            akunGoogle = FirebaseDatabase.getInstance().getReference("history").child(personId);
         }
     }
 
@@ -60,8 +58,8 @@ public class HistoryActivity extends AppCompatActivity {
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 listHistory.clear();
                 for(DataSnapshot postSnapshot : snapshot.getChildren()) {
-                   Akun akun = postSnapshot.getValue(Akun.class);
-                   listHistory.add(akun);
+                   HistoryAkun historyAkun = postSnapshot.getValue(HistoryAkun.class);
+                   listHistory.add(historyAkun);
                 }
                 listview_history historyList_adapter = new listview_history(HistoryActivity.this, listHistory);
                 listViewHistory.setAdapter(historyList_adapter);
