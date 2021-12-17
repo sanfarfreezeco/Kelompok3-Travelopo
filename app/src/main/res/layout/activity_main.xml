@@ -24,9 +24,9 @@
                 android:layout_height="wrap_content"
                 android:layout_centerInParent="true"
                 android:fontFamily="monospace"
-                android:text="Travelindo"
+                android:text="TravelOpo"
                 android:textColor="@android:color/white"
-                android:textSize="24sp"
+                android:textSize="26sp"
                 android:textStyle="italic" />
 
         </RelativeLayout>
