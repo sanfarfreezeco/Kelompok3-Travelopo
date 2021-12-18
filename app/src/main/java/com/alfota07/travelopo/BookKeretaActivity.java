@@ -8,7 +8,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
-import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ListView;
@@ -128,21 +127,16 @@ public class BookKeretaActivity extends AppCompatActivity {
         String dataKeterangan = "Asal: " + asal + "\nTujuan: " + tujuan + "\n\nJumlah\nDewasa: " + dewasa + ", Anak: " + anak;
 
         if(!TextUtils.isEmpty(asal) && !TextUtils.isEmpty(tujuan) && !TextUtils.isEmpty(tanggal) && !TextUtils.isEmpty(dewasa) && !TextUtils.isEmpty(anak)) {
-            HistoryAkun historyAkun = new HistoryAkun(pesan, dataKeterangan, tanggal);
+            HistoryAkun historyAkun = new HistoryAkun(pesan, dataKeterangan, tanggal, idPesan);
             akunGoogle.child(idPesan).setValue(historyAkun).addOnSuccessListener(this, new OnSuccessListener<Void>() {
                 @Override
                 public void onSuccess(@NonNull Void unused) {
                     Toast.makeText(BookKeretaActivity.this, "Anda Telah Memesan Tiket Kereta", Toast.LENGTH_LONG).show();
-                    suksesMemesan();
+                    finish();
                 }
             });
         } else {
             Toast.makeText(this, "Harap Isi Semua Kolom", Toast.LENGTH_LONG).show();
         }
-    }
-
-    private void suksesMemesan() {
-        Intent intent = new Intent(this, MainActivity.class);
-        startActivity(intent);
     }
 }

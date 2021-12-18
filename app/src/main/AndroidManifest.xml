@@ -17,6 +17,10 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
+            android:name=".HistoryActivity2"
+            android:exported="true"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
             android:name=".BookKeretaActivity"
             android:exported="true"
             android:theme="@style/AppTheme.NoActionBar" />
