@@ -67,7 +67,7 @@ public class MainActivity extends AppCompatActivity {
                 .addOnCompleteListener(this, new OnCompleteListener<Void>() {
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {
-                        Toast.makeText(MainActivity.this, "Signed Out", Toast.LENGTH_LONG).show();
+                        Toast.makeText(MainActivity.this, "Anda Telah Keluar dari Akun Anda", Toast.LENGTH_LONG).show();
                         finish();
                     }
                 });
