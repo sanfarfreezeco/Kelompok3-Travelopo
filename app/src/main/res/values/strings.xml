@@ -3,8 +3,10 @@
     <string name="login_email_hint">Email</string>
     <string name="login_password_hint">Password</string>
     <string-array name="Asal">
-        <item>Surabaya</item>
-        <item>Malang</item>
+        <item>Tuban</item>
+        <item>Trenggalek</item>
+        <item>Mojokerto</item>
+        <item>Kediri</item>
     </string-array>
     <string-array name="Jumlah">
         <item>1</item>
