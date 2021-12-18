@@ -27,9 +27,11 @@ public class listview_history extends ArrayAdapter {
         LayoutInflater inflater = context.getLayoutInflater();
         View listViewItem = inflater.inflate(R.layout.layout_history, null, true);
         TextView textViewPesan = listViewItem.findViewById(R.id.textViewPesan);
+        TextView textViewKeterangan = listViewItem.findViewById(R.id.textViewKeterangan);
         TextView textViewTanggal = listViewItem.findViewById(R.id.textViewTanggal);
         HistoryAkun history = list_history.get(position);
         textViewPesan.setText(history.getData_pesan());
+        textViewKeterangan.setText(history.getData_keterangan());
         textViewTanggal.setText(history.getData_tanggal());
         return listViewItem;
     }
