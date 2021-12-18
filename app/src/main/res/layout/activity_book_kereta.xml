@@ -6,7 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".BookKeretaActivity">
 
-
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/tbKrl"
         android:layout_width="match_parent"
@@ -25,7 +24,7 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <com.google.android.material.card.MaterialCardView
+            <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
@@ -85,9 +84,9 @@
 
                 </LinearLayout>
 
-            </com.google.android.material.card.MaterialCardView>
+            </androidx.cardview.widget.CardView>
 
-            <com.google.android.material.card.MaterialCardView
+            <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
@@ -127,9 +126,9 @@
 
                 </LinearLayout>
 
-            </com.google.android.material.card.MaterialCardView>
+            </androidx.cardview.widget.CardView>
 
-            <com.google.android.material.card.MaterialCardView
+            <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
@@ -186,21 +185,19 @@
 
                 </LinearLayout>
 
-            </com.google.android.material.card.MaterialCardView>
+            </androidx.cardview.widget.CardView>
 
-            <com.google.android.material.button.MaterialButton
+            <Button
                 android:id="@+id/book"
                 android:layout_width="match_parent"
-                android:layout_height="56dp"
-                android:layout_marginLeft="24dp"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
+                android:layout_marginLeft="24dp"
                 android:layout_marginRight="24dp"
                 android:text="Booking Sekarang"
-                android:textColor="@android:color/white"
                 android:textSize="16sp"
-                android:theme="@style/Theme.MaterialComponents.Light"
-                app:backgroundTint="@color/biruDasar"
-                app:cornerRadius="50dp" />
+                android:textColor="@color/white"
+                android:background="@drawable/button"/>
 
         </LinearLayout>
 
