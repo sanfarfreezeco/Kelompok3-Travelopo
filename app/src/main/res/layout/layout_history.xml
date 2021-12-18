@@ -18,12 +18,14 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        android:text="dewasa" />
+        android:text="" />
 
     <TextView
         android:id="@+id/textViewTanggal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:text="" />
+
 </LinearLayout>

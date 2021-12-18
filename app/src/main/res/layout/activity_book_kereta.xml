@@ -198,6 +198,7 @@
                 android:layout_marginTop="8dp"
                 android:layout_marginLeft="24dp"
                 android:layout_marginRight="24dp"
+                android:onClick="booking"
                 android:text="Booking Sekarang"
                 android:textSize="16sp"
                 android:textColor="@color/white"
