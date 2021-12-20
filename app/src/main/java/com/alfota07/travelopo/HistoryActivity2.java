@@ -65,7 +65,7 @@ public class HistoryActivity2 extends AppCompatActivity {
                     String tanggal = historyAkun.getData_tanggal();
                     viewPesan.setText(pesan);
                     viewKeterangan.setText(keterangan);
-                    viewKeterangan.setText(tanggal);
+                    viewTanggal.setText(tanggal);
                 }
             }
 
